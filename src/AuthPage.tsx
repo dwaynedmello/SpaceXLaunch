@@ -1,5 +1,5 @@
 // src/pages/AuthPage.tsx
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const AuthPage = () => {
   const [token, setToken] = useState<string | null>(null);
