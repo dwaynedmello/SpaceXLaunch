@@ -1,27 +1,76 @@
-# React + TypeScript + Vite
+# SpaceX Launch Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the SpaceX Launch Web App! This application displays a list of SpaceX launches and provides features like searching, filtering, and infinite scrolling.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Running Cypress Tests](#running-cypress-tests)
+- [Deployment](#deployment)
+- [Built With](#built-with)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Follow the instructions below to set up and run the project on your local machine.
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Node.js (v14 or higher)
+- npm (Node Package Manager)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Installation
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/dwaynedmello/SpaceXLaunch.git
+
+Navigate to the project directory:
+
+bash
+Copy code
+cd spacex-launch-app
+Install project dependencies using npm:
+
+bash
+Copy code
+npm install
+Running the App
+To start the web application locally, use the following command:
+
+bash
+Copy code
+npm run dev
+This will build and run the application, and you can access it in your web browser at http://localhost:3000.
+
+Running Cypress Tests
+Cypress is used for end-to-end testing. To run Cypress tests, use the following commands:
+
+Start the development server (if not already running):
+
+bash
+Copy code
+npm run dev
+Open Cypress test runner:
+
+bash
+Copy code
+npx cypress open
+Click on a test file in the Cypress UI to run the tests interactively.
+
+Deployment
+The project is deployed on Vercel and can be accessed at the following URL:
+
+https://spacexlaunch.vercel.app/
+
+Built With
+Vite - A fast development build tool.
+React - A JavaScript library for building user interfaces.
+Cypress - End-to-end testing framework.
+Contributing
+Contributions are welcome! If you find any issues or have improvements to suggest, please open an issue or create a pull request.
