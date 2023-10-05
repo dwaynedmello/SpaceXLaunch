@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
+import { Routes, Route } from 'react-router-dom'; // Import routing components
 import LaunchList from './LaunchList'; // Import the LaunchList component
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
 
   const handleLogin = () => {
     // Simulate a login action by storing a JWT token in local storage
-    localStorage.setItem('jwtToken', 'your-jwt-token-here');
+    localStorage.setItem('jwtToken', 'asd');
     setIsAuthenticated(true);
   };
 
@@ -28,18 +29,26 @@ function App() {
 
   return (
     <div>
-      {isAuthenticated ? (
-        // Render the LaunchList component when authenticated
-        <div>
-          <Button onClick={handleLogout}>Logout</Button>
-          <LaunchList />
-        </div>
-      ) : (
-        <div>
-          <p>You are not authenticated.</p>
-          <Button onClick={handleLogin}>Login</Button>
-        </div>
-      )}
+      <Routes>
+        {/* Display the LaunchList component on the /launchlist route */}
+        <Route path="/launchlist" element={<LaunchList />} />
+        
+        {/* Display the authentication component on the default route */}
+        <Route path="/" element={
+          isAuthenticated ? (
+            // Render the LaunchList component when authenticated
+            <div>
+              <Button onClick={handleLogout}>Logout</Button>
+              <LaunchList />
+            </div>
+          ) : (
+            <div>
+              <p>You are not authenticated.</p>
+              <Button onClick={handleLogin}>Login</Button>
+            </div>
+          )
+        } />
+      </Routes>
     </div>
   );
 }
